@@ -94,7 +94,7 @@ from sglang.srt.managers.io_struct import (
     LoadLoRAAdapterReqInput,
     LoadLoRAAdapterReqOutput,
     ModelWorkerTask,
-    ModelWorkerTaskOutput,
+    ModelWorkerTaskResult,
     OpenSessionReqInput,
     OpenSessionReqOutput,
     PauseGenerationReqInput,
@@ -2483,7 +2483,7 @@ class Scheduler(
             result,
             group=self.tp_cpu_group,
         )
-        return ModelWorkerTaskOutput(result=results)
+        return ModelWorkerTaskResult(result=results)
 
     def load_lora_adapter(
         self, recv_req: LoadLoRAAdapterReqInput

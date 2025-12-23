@@ -1353,7 +1353,7 @@ class ModelWorkerTask:
 
 
 @dataclass
-class ModelWorkerTaskOutput:
+class ModelWorkerTaskResult:
     result: Any
 
 

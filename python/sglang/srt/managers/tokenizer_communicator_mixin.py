@@ -49,7 +49,7 @@ from sglang.srt.managers.io_struct import (
     LoadLoRAAdapterReqOutput,
     LoRAUpdateOutput,
     ModelWorkerTask,
-    ModelWorkerTaskOutput,
+    ModelWorkerTaskResult,
     OpenSessionReqInput,
     ProfileReq,
     ProfileReqOutput,
@@ -228,7 +228,7 @@ class TokenizerCommunicatorMixin:
         return TypeBasedDispatcher(
             [
                 (
-                    ModelWorkerTaskOutput,
+                    ModelWorkerTaskResult,
                     self.model_worker_execute_task_group_communicator.handle_recv,
                 ),
                 (
